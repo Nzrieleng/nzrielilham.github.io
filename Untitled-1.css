@@ -1,0 +1,79 @@
+/* Mengambil font tulisan tangan dari Google Fonts (Opsional) */
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Indie+Flower&display=swap');
+
+body {
+    background-color: #f4ece1; /* Warna kertas lama */
+    background-image: radial-gradient(#d1c7b7 1px, transparent 1px);
+    background-size: 20px 20px;
+    margin: 0;
+    font-family: 'Indie Flower', cursive;
+}
+
+.scrapbook-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 50px 20px;
+}
+
+header h1 {
+    text-align: center;
+    font-size: 3rem;
+    color: #5d4037;
+    text-shadow: 2px 2px #fff;
+}
+
+.canvas {
+    position: relative;
+    height: 600px; /* Tinggi area kerja scrapbook */
+    margin-top: 50px;
+}
+
+/* Base style untuk setiap item */
+.item {
+    position: absolute;
+    padding: 15px;
+    background: #fff;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+    transform: rotate(var(--angle));
+    top: var(--top);
+    left: var(--left);
+    transition: transform 0.3s ease;
+}
+
+.item:hover {
+    transform: rotate(0deg) scale(1.1);
+    z-index: 10;
+}
+
+/* Gaya Polaroid */
+.polaroid {
+    border-bottom: 40px solid #fff;
+}
+
+.polaroid img {
+    width: 200px;
+    height: auto;
+    display: block;
+}
+
+.caption {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 1.2rem;
+}
+
+/* Gaya Catatan Kertas */
+.paper {
+    background: #fff9c4;
+    width: 150px;
+    padding: 20px;
+    border-left: 5px solid #fbc02d;
+}
+
+.sticker {
+    position: absolute;
+    font-size: 2.5rem;
+    top: var(--top);
+    left: var(--left);
+    filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.2));
+}
